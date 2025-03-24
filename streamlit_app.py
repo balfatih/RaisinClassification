@@ -36,3 +36,18 @@ with st.expander("📊 Data Visualization"):
 
     # Streamlit'te grafiği göster
     st.pyplot(fig)
+
+    # Matplotlib figürü oluştur
+    fig, ax = plt.subplots()
+    sns.histplot(
+        data=df,
+        x='Perimeter',
+        hue='Class',
+        kde=True,
+        multiple='stack',
+        ax=ax  # Grafik nesnesini burada belirtiyoruz
+    )
+    ax.set_title('Area & Classes', fontsize=15)
+
+    # Streamlit'te grafiği göster
+    st.pyplot(fig)
