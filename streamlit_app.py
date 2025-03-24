@@ -19,5 +19,5 @@ with st.expander('Raisin Dataset'):
   y = df.Class
   y
 
-with st.expander('Data Visualization')
+with st.expander('Data Visualization'):
   st.scatter_chart(data=df, x='Perimeter', y='Class', color='species')
