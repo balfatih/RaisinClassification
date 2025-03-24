@@ -1,6 +1,8 @@
 
 import streamlit as st 
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 st.title('🚧 Machine Learning Application for Raisin Classification')
 
@@ -19,5 +21,18 @@ with st.expander('Raisin Dataset'):
   y = df.Class
   y
 
-with st.expander('Data Visualization'):
-  st.scatter_chart(data=df, x='Perimeter', y='Class', color='species')
+with st.expander("📊 Data Visualization"):
+    # Matplotlib figürü oluştur
+    fig, ax = plt.subplots()
+    sns.histplot(
+        data=df,
+        x='Area',
+        hue='Class',
+        kde=True,
+        multiple='stack',
+        ax=ax  # Grafik nesnesini burada belirtiyoruz
+    )
+    ax.set_title('Area & Classes', fontsize=15)
+
+    # Streamlit'te grafiği göster
+    st.pyplot(fig)
