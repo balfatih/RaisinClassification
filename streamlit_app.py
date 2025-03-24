@@ -47,7 +47,7 @@ with st.expander("📊 Data Visualization"):
         multiple='stack',
         ax=ax  # Grafik nesnesini burada belirtiyoruz
     )
-    ax.set_title('Area & Classes', fontsize=15)
+    ax.set_title('Perimeter & Classes', fontsize=15)
 
     # Streamlit'te grafiği göster
     st.pyplot(fig)
