@@ -10,3 +10,11 @@ with st.expander('Raisin Dataset'):
   st.write('Raw Data')
   df = pd.read_csv('https://raw.githubusercontent.com/balfatih/RaisinClassification/refs/heads/main/Dataset/Raisin_Dataset.csv')
   df
+
+  st.write('**X***')
+  X = df.drop('Class', axis=1)
+  X
+
+  st.write('**X***')
+  y = df.Class
+  y
